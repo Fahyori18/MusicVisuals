@@ -37,8 +37,8 @@ public class CubeVisual extends Visual
 
         startMinim();
         loadAudio("heroplanet.mp3");
-        //getAp().play();
-        //startListening(); 
+        getAudioPlayer().play();
+        startListening(); 
         
     }
 
