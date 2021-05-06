@@ -84,6 +84,36 @@ This is code:
 ```
 
 ```Java
+void sunset(){
+
+        background(0);
+        colorMode(RGB);
+        setGradient(0,0,width,height, color(65, 105, 225), color(255, 69, 0), 1);
+        sun.update();
+        sun.draw();
+        fill(30,144,255);
+        setGradient(0,(int)(height*.72f),width,height, color(30,144 , 255), color(0, 0, 0), 1);
+        
+
+        //wf.render();
+        //abv.render();
+        for(int i = objects.size()-1; i >= 0; i--)
+        {
+            Object o = objects.get(i);
+            o.draw();
+            o.update();
+        }
+        if(getAmplitude() < getSmoothedAmplitude())
+        {
+            spawnClouds();
+        }
+        Ocean();
+        volume();
+    }
+
+```
+
+```Java
 void Ocean()
     {
         radius = 200;
@@ -138,6 +168,19 @@ void pauseMenu(){
 
 
     }
+```
+
+```Java
+void setGradient(int x, int y, float w, float h, int c1, int c2, int axis ) {
+
+        //noFill();
+          for (int i = y; i <= y+h; i++) {
+            float inter = map(i, y, y+h, 0, 1);
+            stroke(lerpColor(c1, c2, inter));
+            line(x, i, x+w, i);
+          }
+      }
+
 ```
 So is this without specifying the language:
 
