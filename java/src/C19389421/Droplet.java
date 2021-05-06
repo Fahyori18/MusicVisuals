@@ -1,19 +1,17 @@
 package C19389421;
 
-public class Droplet {
+public class Droplet extends Object {
 
-    float x, y, speed, w;
+    float w;
     PraifaVisual pv;
 
     public Droplet(float x, float y, float speed, PraifaVisual pv, float w) {
-        this.x = x;
-        this.y = y;
-        this.speed = speed;
+        super(x, y, speed);
         this.pv = pv;
         this.w = w;
     }
 
-    void draw(){
+    public void draw(){
         float quarter = w/4;
         pv.stroke (135,206,250);
         pv.line(x+quarter, y -5,x+quarter, y + 5);
@@ -21,11 +19,12 @@ public class Droplet {
         pv.line(x-quarter, y -5, x - quarter, y + 5);
     }
 
-    void update(){
+    public void update(){
         y += speed;
-        if(y >= pv.height)
+        if(y >= pv.height*.72f)
         {
             pv.droplets.remove(this);
+            pv.objects.remove(this);
         }
     }
 
