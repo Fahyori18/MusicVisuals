@@ -228,7 +228,6 @@ public class PraifaVisual extends Visual
         text("Press Space to pause/unpause", cx, cy+cy*0.2f);
         noFill();
 
-
     }
     void sunset(){
 
