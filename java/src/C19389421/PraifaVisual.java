@@ -248,7 +248,7 @@ public class PraifaVisual extends Visual
             o.draw();
             o.update();
         }
-        if(getAmplitude() < getSmoothedAmplitude())
+        if(getSmoothedAmplitude()*100 > 8)
         {
             spawnClouds();
         }
